@@ -26,6 +26,8 @@ class FileManager:
         except FileNotFoundError:
             print(f"Le fichier {self.file_path} n'a pas été trouvé.")
             return 0
+        except Exception as e:
+            print(f"Une erreur s'est produite : {e}")
 <<<<<<< HEAD
 =======
         
