@@ -11,9 +11,12 @@ class FileManager:
             print(content)
 
     def write_to_file(self, data):
-        with open(self.file_path, 'a') as file:
-            file.write(data + '\n') 
-            print("Les données ont été ajoutées à la fin du fichier.")
+        try:
+            with open(self.file_path, 'a') as file:
+                file.write(data + '\n') 
+                print("Les données ont été ajoutées à la fin du fichier.")
+        except Exception as e:
+            print(f"Une erreur s'est produite lors de l'écriture dans le fichier : {e}")
             
     def count_lines(self):
         try:
@@ -23,6 +26,10 @@ class FileManager:
         except FileNotFoundError:
             print(f"Le fichier {self.file_path} n'a pas été trouvé.")
             return 0
+        except Exception as e:
+            print(f"Une erreur s'est produite : {e}")
+<<<<<<< HEAD
+=======
         
     def search_keyword(self, keyword):
         try:
@@ -37,6 +44,7 @@ class FileManager:
                     print(f"Le mot-clé '{keyword}' n'a pas été trouvé.")
         except FileNotFoundError:
             print(f"Le fichier {self.file_path} est introuvable.")
+>>>>>>> 3130d74850cc4199f34489036f8e405b86e409c0
         except Exception as e:
             print(f"Une erreur s'est produite lors de la recherche du mot-clé : {e}")
 
