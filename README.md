@@ -16,7 +16,13 @@ Il permet de :
   - Rechercher un mot-clé, par exemple `ERROR`.
   - Afficher le nombre de lignes dans le fichier.
 
+# Utilité de requirements.txt
+Le fichier requirements.txt contient toutes les dépendances nécessaires pour exécuter ce projet. Cela permet de s'assurer que tous les utilisateurs peuvent installer les mêmes versions de packages, garantissant ainsi la compatibilité entre différentes installations.
 
-# Test
+Pour installer les dépendances du projet, exécutez :
+
+- **pip install -r requirements.txt**
+
+# Exécution et  Test
 Le fichier principal pour tester `FileManager` est `main.py`. Pour exécuter le script, utilisez la commande :
 - **python main.py**

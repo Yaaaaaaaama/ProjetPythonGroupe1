@@ -1,16 +1,18 @@
 class FileManager:
-    # Stocker le chemin
+    """Classe pour gérer les opérations de fichiers comme la lecture et l'écriture."""
     def __init__(self, file_path):
+        """Initialise le gestionnaire de fichiers avec un chemin de fichier donné."""
         self.file_path = file_path
 
     def read_file(self):
-        # Lire / afficher le contenu
+        """Affiche le contenu complet du fichier."""
         with open(self.file_path, 'r') as file:
             content = file.read()
             print("Contenu du fichier :")
             print(content)
 
     def write_to_file(self, data):
+        """Ajoute une nouvelle ligne de texte à la fin du fichier."""
         try:
             with open(self.file_path, 'a') as file:
                 file.write(data + '\n') 
@@ -19,6 +21,7 @@ class FileManager:
             print(f"Une erreur s'est produite lors de l'écriture dans le fichier : {e}")
             
     def count_lines(self):
+        """Compte le nombre de lignes dans le fichier."""
         try:
             with open(self.file_path, 'r') as file:
                 nbr_lignes = file.readlines()  
@@ -31,6 +34,7 @@ class FileManager:
         except Exception as e:
             print(f"Une erreur s'est produite lors de la recherche du mot-clé : {e}")
     def search_keyword(self, keyword):
+        """"Recherche et affiche les lignes contenant un mot-clé spécifique."""
         try:
             with open(self.file_path, 'r') as file:
                 lines = file.readlines()
