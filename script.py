@@ -1,16 +1,29 @@
 import pandas as pd
+import re
 
-# Lire le fichier log.txt dans un DataFrame
-df_logs = pd.read_csv('log.txt', sep="\n", header=None, names=["Log"])
+with open('log.txt', 'r') as file:
+    logs = file.readlines()
 
-# Afficher le contenu du fichier
-print("Contenu du fichier log.txt :")
-print(df_logs)
+data = []
 
-# Compter le nombre de lignes
-print("\nNombre de lignes dans le fichier log.txt :")
-print(len(df_logs))
+log_pattern = re.compile(r'\[(.*?)\]\s+(\w+):\s+(.*)')
 
-# Enregistrer le DataFrame dans un fichier CSV (optionnel)
-df_logs.to_csv('logs.csv', index=False)
-print("\nLogs enregistrés dans 'logs.csv'")
+for log in logs:
+    match = log_pattern.match(log)
+    if match:
+        data.append({'Date': match.group(1), 'Niveau': match.group(2), 'Message': match.group(3)})
+
+df_logs = pd.DataFrame(data)
+
+erreurs = df_logs[df_logs['Niveau'] == 'ERROR']
+avertissements = df_logs[df_logs['Niveau'] == 'WARNING']
+infos = df_logs[df_logs['Niveau'] == 'INFO']
+
+print("Logs d'erreurs :")
+print(erreurs)
+
+print("\nLogs d'avertissements :")
+print(avertissements)
+
+print("\nLogs d'information :")
+print(infos)
