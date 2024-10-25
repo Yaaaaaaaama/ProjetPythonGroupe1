@@ -65,7 +65,10 @@
 [2024-10-20 12:00:00] INFO: Nouveau log ajouté
 [2024-10-20 12:00:00] INFO: Nouveau log ajouté
 [2024-10-20 12:00:00] INFO: Nouveau log ajouté
+<<<<<<< HEAD
+=======
 Ajout du'une nouvelle ligne
 Ajout du'une nouvelle ligne
 [2024-10-20 12:00:00] INFO: Nouveau log ajouté
 [2024-10-20 12:00:00] INFO: Nouveau log ajouté
+>>>>>>> dfaf67536f48d1f19f4e635f139dace9d629510a

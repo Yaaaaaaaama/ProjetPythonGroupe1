@@ -28,11 +28,11 @@ class FileManager:
                 return len(nbr_lignes)  
         except FileNotFoundError:
             print(f"Le fichier {self.file_path} n'a pas été trouvé.")
-            return 0
+            
         except Exception as e:
             print(f"Une erreur s'est produite : {e}")
-        except Exception as e:
-            print(f"Une erreur s'est produite lors de la recherche du mot-clé : {e}")
+        
+            
     def search_keyword(self, keyword):
         """"Recherche et affiche les lignes contenant un mot-clé spécifique."""
         try:
